@@ -143,8 +143,8 @@ int main()
 { int r,c; for (r=0;r<8;r++) for (c=0;c<8;c++) board[r][c]=0; // board elements all 0
   putPlayersPieces(WHITE);
   putPlayersPieces(BLACK);
-  Player* White = new Player(WHITE);
-  Player* Black = new Player(BLACK);
+  Player *White = new Player(WHITE);
+  Player *Black = new Player(BLACK);
   while (true)
   { displayBoard();
     White->takeTurn();

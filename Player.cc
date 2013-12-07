@@ -1,8 +1,3 @@
-using namespace std;
-
-Player::Player(PlayerColour c){
-}
-
 int Player::validMove()
 { int inRange=0; // now check and set to 1 if move is in range:
   if ((fromRow < 0) || (fromRow > 7))
@@ -22,9 +17,8 @@ int Player::validMove()
   return board[fromRow][fromColumn]->validMove(colour,fromRow,fromColumn,toRow,toColumn);
 }
 
-int Player::takeTurn()
-{
-  while(!Player::validMove())
+  int Player::takeTurn()
+{ while(!Player::validMove())
   { char fromColumnChar,toColumnChar;
     while (true)
     { cout << endl << "Please enter a move in the form" << endl
@@ -53,7 +47,7 @@ int Player::takeTurn()
       cout<<endl<<"Congrats, You win."<<endl<<endl;
       exit(0);
     }
-  return 1;
+    return 1;
   }
   return 0;
 }
