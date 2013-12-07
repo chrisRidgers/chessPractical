@@ -3,10 +3,16 @@
 class Player
 {
   public:
-    PlayerColour colour;
 
-    Player(PlayerColour c):colour{c}{}
-    int takeTurn();
+    Player(PlayerColour _colour):colour{_colour}{}
+    void takeTurn();
+
+  private:
+    void displayBoard();
+    void inputMove();
     int validMove();
+    void carryOutMove();
+    PlayerColour colour;
+    int fromRow,fromColumn,toRow,toColumn;
 };
 #endif

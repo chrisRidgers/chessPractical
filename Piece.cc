@@ -1,5 +1,9 @@
 using namespace std;
 
+PieceType Piece::getType() {return type;}
+
+PlayerColour Piece::getColour() {return colour;}
+
 int Piece::validMove(PlayerColour testColour,
     int fromRow,int fromColumn,int toRow,int toColumn)
 { // Note: The function that calls validMove should have already checked that the four
