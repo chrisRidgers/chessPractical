@@ -1,16 +1,16 @@
 // C++ Guided Practical Exercise 1
 
-#include <iostream>
-#include <cstdlib>
+#include "header.h"
 using namespace std;
 
-enum PieceType {PAWN,CASTLE,KNIGHT,BISHOP,QUEEN,KING};
-enum PlayerColour {BLACK,WHITE};
+//enum PieceType {PAWN,CASTLE,KNIGHT,BISHOP,QUEEN,KING};
+//enum PlayerColour {BLACK,WHITE};
 
-struct Piece
+/*struct Piece
 { PieceType type;
   PlayerColour colour;
 };
+*/
 
 Piece* board [8][8]; // [row,bottom=0][column,left=0]
 
@@ -27,7 +27,7 @@ void putPlayersPieces(PlayerColour colour)
   {
     PieceType pieceType;
 
-    board[pawnRow][i]=new Piece;
+    board[pawnRow][i]=new Piece(pieceType,colour);
     board[pawnRow][i]->type=PAWN;
     board[pawnRow][i]->colour=colour;
     switch(i)
@@ -41,7 +41,7 @@ void putPlayersPieces(PlayerColour colour)
       case 6: pieceType=KNIGHT; break;
       case 7: pieceType=CASTLE; break;
     }
-    board[kingRow][i]=new Piece;
+    board[kingRow][i]=new Piece(pieceType,colour);
     board[kingRow][i]->type=pieceType;
     board[kingRow][i]->colour=colour;
   }
@@ -126,7 +126,7 @@ void carryOutMove()
     exit(0);
   }
 }
-
+                     /*
 int main()
 { int r,c; for (r=0;r<8;r++) for (c=0;c<8;c++) board[r][c]=0; // board elements all 0
   putPlayersPieces(WHITE);
@@ -135,6 +135,20 @@ int main()
   { displayBoard();
     inputMove();
     carryOutMove();
+  }
+  return 0;
+}
+*/
+int main()
+{ int r,c; for (r=0;r<8;r++) for (c=0;c<8;c++) board[r][c]=0; // board elements all 0
+  putPlayersPieces(WHITE);
+  putPlayersPieces(BLACK);
+  Player* White = new Player(WHITE);
+  Player* Black = new Player(BLACK);
+  while (true)
+  { displayBoard();
+    White->takeTurn();
+    Black->takeTurn();
   }
   return 0;
 }
