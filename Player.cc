@@ -1,3 +1,5 @@
+#include "header.h"
+using namespace std;
 int Player::validMove()
 { int inRange=0; // now check and set to 1 if move is in range:
   if ((fromRow < 0) || (fromRow > 7))
@@ -19,6 +21,7 @@ int Player::validMove()
 
 Player::Player(PlayerColour _colour)
 { int pawnRow,kingRow;
+  colour = _colour;
   if (colour == WHITE)      {pawnRow=1; kingRow=0;}
   else if (colour == BLACK) {pawnRow=6; kingRow=7;}
   else { cerr << "Error in Player constructor" << endl; exit(1);} // should never happen
@@ -100,24 +103,6 @@ void Player::inputMove()
   toColumn   = ((int) toColumnChar  ) - ((int) 'a');
 }
 
-int Player::validMove()
-{ int inRange=0; // now check and set to 1 if move is in range:
-  if ((fromRow < 0) || (fromRow > 7))
-    cerr << "Error - FromRow must be between 1 and 8" << endl;
-  else if ((fromColumn < 0) || (fromColumn > 7))
-    cerr << "Error - FromColumn must be between a and h" << endl;
-  else if ((toRow < 0) || (toRow > 7))
-    cerr << "Error - ToRow must be between 1 and 8" << endl;
-  else if ((toColumn < 0) || (toColumn > 7))
-    cerr << "Error - ToColumn must be between a and h" << endl;
-  else inRange=1;
-  if (!inRange) return 0; // not a valid move
-  if (!(board[fromRow][fromColumn]))
-  { cerr << "Error - There is no piece in your From position" << endl;
-    return 0; // not a valid move
-  }
-  return board[fromRow][fromColumn]->validMove(colour,fromRow,fromColumn,toRow,toColumn);
-}
 
 void Player::carryOutMove()
 { Piece*& ptr_fromPiece = board[fromRow][fromColumn]; // References to pointers, so

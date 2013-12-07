@@ -1,3 +1,4 @@
+#include "header.h"
 using namespace std;
 
 PieceType Piece::getType() {return type;}

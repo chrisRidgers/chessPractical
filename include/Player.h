@@ -4,7 +4,7 @@ class Player
 {
   public:
 
-    Player(PlayerColour _colour):colour{_colour}{}
+    Player(PlayerColour _colour);
     void takeTurn();
 
   private:
