@@ -3,8 +3,9 @@
 #include "enum.h"
 #include "Player.h"
 #include "Piece.h"
-#include "Board.h"
+#include "board.h"
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+extern Piece* board();
 #endif
