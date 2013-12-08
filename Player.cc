@@ -1,5 +1,8 @@
 #include "header.h"
 using namespace std;
+
+extern Piece* board;
+
 int Player::validMove()
 { int inRange=0; // now check and set to 1 if move is in range:
   if ((fromRow < 0) || (fromRow > 7))
