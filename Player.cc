@@ -1,7 +1,7 @@
 #include "header.h"
 using namespace std;
 
-extern Piece* board;
+extern Piece* board[8][8];
 
 int Player::validMove()
 { int inRange=0; // now check and set to 1 if move is in range:

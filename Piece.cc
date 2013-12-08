@@ -1,9 +1,9 @@
 #include "header.h"
 using namespace std;
 
-extern Piece* board;
+extern Piece* board[8][8];
 
-//PieceType Piece::getType() {return type;}
+PieceType Piece::getType() {return type;}
 
 PlayerColour Piece::getColour() {return colour;}
 
