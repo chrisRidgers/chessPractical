@@ -3,7 +3,7 @@
 class Piece
 {
   public:
-    PieceType getType();
+    PieceType getType(){return type;};
     PlayerColour getColour();
     int validMove(PlayerColour testColour,
 	int fromRow,int fromColumn,int toRow, int toColumn);

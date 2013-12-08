@@ -3,7 +3,7 @@ using namespace std;
 
 extern Piece* board;
 
-PieceType Piece::getType() {return type;}
+//PieceType Piece::getType() {return type;}
 
 PlayerColour Piece::getColour() {return colour;}
 
