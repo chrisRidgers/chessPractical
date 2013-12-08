@@ -90,7 +90,7 @@ void Player::displayBoard()
 void Player::inputMove()
 { char fromColumnChar,toColumnChar;
   while (true)
-  { cout << endl << name << ", please enter a move in the form" << endl
+  { cout << endl << colour << ", please enter a move in the form" << endl
          << "FromRow FromColumn ToRow ToColumn, eg. 1 b 3 c :" << endl;
     cin >> fromRow >> fromColumnChar >> toRow >> toColumnChar;
     if (!cin.fail()) break;
@@ -113,7 +113,7 @@ void Player::carryOutMove()
   ptr_fromPiece = 0;           // but works because using references to board's pointers
   if (victory)
   { displayBoard();
-    cout << endl << "Congratulations " << name << " - You have won." << endl << endl;
+    cout << endl << "Congratulations " << colour << " - You have won." << endl << endl;
     exit(0);
   }
 }
