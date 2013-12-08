@@ -7,5 +7,4 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
-extern Piece* board();
 #endif
