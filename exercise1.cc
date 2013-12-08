@@ -4,7 +4,8 @@
 using namespace std;
 
 int main()
-{ int r,c; for (r=0;r<8;r++) for (c=0;c<8;c++) board[r][c]=0; // board elements all 0
+{ Board board = new Board();
+  int r,c; for (r=0;r<8;r++) for (c=0;c<8;c++) board[r][c]=0; // board elements all 0
   Player player1(WHITE);
   Player player2(BLACK);
   while (true)

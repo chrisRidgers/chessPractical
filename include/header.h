@@ -3,9 +3,8 @@
 #include "enum.h"
 #include "Player.h"
 #include "Piece.h"
+#include "Board.h"
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
-
-Piece* board [8][8];
 #endif
